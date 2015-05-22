@@ -26,6 +26,7 @@ import sys
 import time
 import platform
 import shutil
+import random
 
 from alignment import Alignment
 from sate import get_logger, GLOBAL_DEBUG, SATE_SYSTEM_PATHS_CFGFILE, DEFAULT_MAX_MB
@@ -794,6 +795,7 @@ class Raxml(TreeEstimator):
                 '-n', name,
                 '-q', parfn,
                 '-s', seqfn,
+                '-p', str(random.randint(1,1000000000)),
                 # '-M', # Branch length estimates per partition
                 ]
         #x = open(parfn).readlines()
